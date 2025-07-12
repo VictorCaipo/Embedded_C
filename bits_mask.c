@@ -8,6 +8,7 @@ void print_binary(uint8_t decimal);
 //      limpiar o alternar ciertos bits
 
 int main(void) {
+    //  Prender un bit especifico
     //Creando  una variable (informalmente llamada registro)
     uint8_t variable = 0b00000000 ; 
     variable |= (1<<2);
@@ -31,6 +32,31 @@ int main(void) {
     //Al comprar el led_rojo con el AND tendremos todos los bits
     //correspondientes al led_rojo pero el bit 2 siempre estara
     //apagado, de esta manera conseguimos apagar un bit
+    print_binary(led_rojo);
+    printf("\n");
+
+
+    //  Invertir un bit especifico
+    //  Aca se utiliza el operador XOR (^), XOR solo devuelve 1 cuando 
+    //  A y B son diferentes
+    uint8_t invirtiendo = 0b11111111;
+    invirtiendo ^= (1<<2); //Inviertiendo el bit 2
+    // Al usar el operador XOR entre el binario y la variable obtenemos queç
+    // el valor en 1 del binario invertira el bit de la variable sea 0 o 1
+    print_binary(invirtiendo);
+    printf("\n");
+
+    //  Comprobar si un bit esta activo
+    uint8_t comprobacion = 0b00001111;
+    if(comprobacion & (1<<2)){
+        printf("El bit 2 esta activo\n");
+        print_binary(comprobacion);
+        //En C para que entres dentro del condicional hace falte que la condicion
+        //sea distinta de cero no importa si es 1 o 2 o 3 o 4
+    }else{
+        printf("El bit 2 no esta activo\n");
+    }
+
 
 
 }

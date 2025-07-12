@@ -1,2 +1,2 @@
 # Embedded_C
-It contains how to program in C for embedded sistems
+This respository contains C programming language for Embedded Systems
